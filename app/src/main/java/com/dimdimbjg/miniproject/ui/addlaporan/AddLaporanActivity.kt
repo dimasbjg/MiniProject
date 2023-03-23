@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import coil.load
-import com.dimdimbjg.miniproject.BuildConfig
 import com.dimdimbjg.miniproject.R
 import com.dimdimbjg.miniproject.data.Resource
 import com.dimdimbjg.miniproject.databinding.ActivityAddLaporanBinding
@@ -284,7 +283,7 @@ class AddLaporanActivity : AppCompatActivity() {
                 photoFile?.also {
                     val photoURI: Uri = FileProvider.getUriForFile(
                         Objects.requireNonNull(this),
-                        BuildConfig.APPLICATION_ID + ".provider", it
+                        "com.dimdimbjg.miniproject" + ".provider", it
                     );
 
                     intent.putExtra("aspectX", 1)
