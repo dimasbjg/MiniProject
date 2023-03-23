@@ -46,8 +46,8 @@ import kotlin.properties.Delegates
 
 class AddLaporanFragment : BottomSheetDialogFragment() {
 
-    private var _binding: FragmentAddLaporanBinding? = null;
-    private val binding get() = _binding!!;
+    private var _binding: FragmentAddLaporanBinding? = null
+    private val binding get() = _binding!!
     private lateinit var jenisKendaraan: List<Vehicle>
     private lateinit var currentPhotoPath: String
 
@@ -153,19 +153,27 @@ class AddLaporanFragment : BottomSheetDialogFragment() {
             dispatchTakePictureIntent()
         }
 
+        binding.btImage.setOnClickListener {
+            dispatchTakePictureIntent()
+        }
+
         //handle upload
 
         binding.actvJenisKendaraan.setOnItemClickListener { _, _, i, _ ->
             indexSelected = i
         }
 
+
+
         binding.btAddLaporan.setOnClickListener {
             if (binding.actvJenisKendaraan.text.toString().isEmpty()) {
-                Toast.makeText(requireActivity(),"Harap pilih jenis kendaraan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "Harap pilih jenis kendaraan", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
             if (binding.etCatatanKeluhan.text.isEmpty()) {
-                Toast.makeText(requireActivity(),"Harap tuliskan keluhan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "Harap tuliskan keluhan", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
             if (this::file.isInitialized) {
@@ -194,11 +202,17 @@ class AddLaporanFragment : BottomSheetDialogFragment() {
                                                     Toast.LENGTH_SHORT
                                                 ).show()
 
-                                                val intent = Intent(requireActivity(), MainActivity::class.java)
+                                                val intent = Intent(
+                                                    requireActivity(),
+                                                    MainActivity::class.java
+                                                )
                                                 startActivity(intent)
                                             }
                                             is Resource.Loading -> {
-
+                                                Toast.makeText(requireActivity(), "Loading", Toast.LENGTH_SHORT)
+                                                    .show()
+                                                binding.btAddLaporan.visibility = View.GONE
+                                                binding.btAddLaporan.isEnabled = false
                                             }
                                             is Resource.Error -> {
                                                 Toast.makeText(
@@ -217,16 +231,28 @@ class AddLaporanFragment : BottomSheetDialogFragment() {
 
                             }
                             is Resource.Error -> {
-                                Toast.makeText(requireActivity(), "Koneksi terputus", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    requireActivity(),
+                                    "Koneksi terputus",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                         }
                     }
 
                 } else {
-                    Toast.makeText(requireActivity(),"Harap mengambil ulang gambar", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireActivity(),
+                        "Harap mengambil ulang gambar",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             } else {
-                Toast.makeText(requireActivity(),"Harap mengambil gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireActivity(),
+                    "Harap mengambil gambar terlebih dahulu",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
@@ -302,7 +328,8 @@ class AddLaporanFragment : BottomSheetDialogFragment() {
 
     private fun createImageFile(): File? {
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir: File? = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val storageDir: File? =
+            requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(
             "JPEG_${timeStamp}_", /* prefix */
             ".jpg", /* suffix */
