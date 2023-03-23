@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MiniProject</string>
+    <string name="laporan_keluhan_kendaraan">Laporan Keluhan Kendaraan</string>
+    <string name="full_name">Dimas Yuda Wahyu Cakra Buana</string>
+    <string name="buat_laporan_keluhan_baru">Buat Laporan Keluhan Baru</string>
+    <string name="no_pol">B-XXXX-EC</string>
+    <string name="vehiclename">vehicleName</string>
+    <string name="reportby">reportBy</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed ornare enim. Pellentesque lectus ex, facilisis sed iaculis at, dapibus at lorem. Duis eget eros enim. Fusce iaculis purus a lacinia fermentum. Phasellus libero ligula, euismod eget lorem eget, placerat congue elit. Suspendisse eros mi, euismod at luctus ut, feugiat ac nisl. Nam justo turpis, tempor vel purus a, consectetur ullamcorper elit. Phasellus consequat, sapien sed condimentum dapibus, sapien tellus finibus enim, efficitur rhoncus sapien nibh quis eros. Aenean posuere turpis at quam pellentesque pharetra. Maecenas et ipsum libero.</string>
+    <string name="laporan_keluhan">Laporan Keluhan</string>
+    <string name="reportid">reportid</string>
+    <string name="item_date">Senin, 1 Jan - 12:30</string>
+    <string name="status">status</string>
+    <string name="catatan_keluhan">Catatan Keluhan :</string>
+    <string name="loading">Loading</string>
+    <string name="form_laporan_keluhan">Form Laporan Keluhan</string>
+    <string name="jenis_kendaraan">Jenis Kendaraan</string>
+    <string name="dokumen_laporan">Dokumen Laporan</string>
+    <string name="ambil_foto">Ambil Foto</string>
+</resources>
